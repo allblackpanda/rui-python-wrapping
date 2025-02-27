@@ -128,7 +128,7 @@ def track_event_numeric(event_category, event_name, custom_value):
     else:
         return mySDK.TrackEventNumeric(event_category, event_name, custom_value)
 
-# Get all manual reachout campaigns
+# Get all manual reachout campaigns and return them as a list of dictionaries
 def manually_get_all_reachouts():
     global mySDK
     message = ""
