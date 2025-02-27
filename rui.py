@@ -37,7 +37,7 @@ global session_id
 session_id = None
 DEFAULT_CONFIG = {
     "rui_product_id": "2399118365",
-    "rui_app_name": "DM_Key_Manager",
+    "rui_app_name": "RUI_Demo_App",
     "rui_url": "36368.tbnet1.com",
     "rui_key": "18864666411186DADA2DF73E91457D51"
 }
