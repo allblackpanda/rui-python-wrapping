@@ -41,6 +41,12 @@ DEFAULT_CONFIG = {
     "rui_url": "36368.tbnet1.com",
     "rui_key": "18864666411186DADA2DF73E91457D51"
 }
+BHARGAVA_CONFIG = {
+    "rui_product_id": "2390128164",
+    "rui_app_name": "eventcap",
+    "rui_url": "97869.tbnet1.com",
+    "rui_key": "901E58E64B7539CE8F600B1DCFDAA910"
+}
 
 APP_INFO = {
     "product_edition" : "Professional",
@@ -164,18 +170,21 @@ def manually_get_all_reachouts():
 ##################################################
 # Main For Testing Code
 ##################################################
-# print(start_rui_tracking(use_session=True))
+print(start_rui_tracking(config=BHARGAVA_CONFIG))
+
+# Get all manual reachout campaigns
 # print(manually_get_all_reachouts())
-# if session_id:
-#     print(mySDK.TrackEvent("Feature_Request", "survey-acquire", session_id))
-# else:
-#     mySDK.TrackEvent("Feature_Request", "survey-acquire")
-# time.sleep(1)
-# if session_id:
-#     mySDK.TrackEvent("Feature_Request", "survey-return", session_id)
-# else:
-#     mySDK.TrackEvent("Feature_Request", "survey-return")
-# time.sleep(1)
-# print(mySDK.TrackEventText("Feature_Request", "survey-acquire", "This is a test event with text", session_id))
-# time.sleep(1)
-# print(stop_rui_tracking())
+time.sleep(1)
+
+# Send TrackEvent
+print(track_event("Daniel_Request", "event-cap"))
+time.sleep(2)
+
+# Send TrackEventText with custom text value
+print(track_event("Daniel_Request", "event-cap","This is a test event from Daniel"))
+
+# Send TrackEventNumeric with custom numeric value (float)
+print(track_event_numeric("Daniel_Request", "event-cap", 123.456))
+
+time.sleep(1)
+print(stop_rui_tracking())
